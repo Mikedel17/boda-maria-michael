@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maria &amp; Michael — 26.09.2026</title>
+<meta name="description" content="Nos casamos y queremos celebrarlo contigo. Sábado 26 de septiembre de 2026, Lima, Perú.">
+<meta property="og:title" content="Maria &amp; Michael — ¡Nos casamos!">
+<meta property="og:description" content="Sábado 26 de septiembre de 2026 · Lima, Perú. Abre tu invitación aquí.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://mikedel17.github.io/boda-maria-michael/fotos/foto-1.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="envelope.css">
+</head>
+<body>
+
+<!-- ============ MÚSICA ============ -->
+<audio id="bgMusic" src="musica/yebbas-heartbreak.mp3" loop preload="auto"></audio>
+<button class="music-toggle" id="musicToggle" hidden aria-label="Pausar música" aria-pressed="true">
+  <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
+</button>
+
+<!-- ============ INTRO / SOBRE ============ -->
+<div class="intro" id="intro" aria-hidden="false">
+  <div class="intro-inner">
+    <p class="intro-kicker">Tienes una invitación</p>
+
+    <div class="envelope-scene">
+      <div class="envelope" id="envelope">
+        <div class="env-back" aria-hidden="true"></div>
+        <div class="env-letter" aria-hidden="true">
+          <div class="letter-card">
+            <span class="letter-monogram">M<em>M</em></span>
+            <span class="letter-names">Maria <span class="amp">&amp;</span> Michael</span>
+            <span class="letter-date">26 . 09 . 2026</span>
+          </div>
+        </div>
+        <div class="env-flap" aria-hidden="true">
+          <span class="flap-monogram" aria-hidden="true">M<em>M</em></span>
+        </div>
+        <div class="env-pocket" aria-hidden="true"></div>
+        <button class="env-seal" id="openBtn" aria-label="Abrir invitación">
+          <svg viewBox="0 0 100 128" aria-hidden="true">
+            <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <!-- marco festoneado grabado -->
+              <ellipse cx="50" cy="64" rx="36" ry="50" stroke="#cfc4ad" stroke-width="1.6"/>
+              <ellipse cx="50" cy="64" rx="31" ry="45" stroke="#d8cebb" stroke-width="1" stroke-dasharray="0.5 6"/>
+              <!-- cala: espata -->
+              <path d="M50 42 C38 46 36 62 44 70 C48 74 56 74 59 68 C64 58 60 45 50 42 Z" stroke="#b9ad93" stroke-width="1.8"/>
+              <path d="M50 42 C54 48 55 58 52 66" stroke="#c4b99f" stroke-width="1.3"/>
+              <!-- espádice -->
+              <path d="M49 64 V52" stroke="#b9ad93" stroke-width="1.8"/>
+              <!-- tallo -->
+              <path d="M51 72 C51 80 49 86 46 92" stroke="#b9ad93" stroke-width="1.8"/>
+              <!-- hojas -->
+              <path d="M46 92 C38 86 34 80 36 74 C42 76 46 82 47 88" stroke="#c4b99f" stroke-width="1.5"/>
+              <path d="M46 92 C52 85 58 82 63 83 C61 89 55 93 49 93" stroke="#c4b99f" stroke-width="1.5"/>
+            </g>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <p class="intro-tap" id="introTap">Toca el sello para abrir</p>
+  </div>
+</div>
+
+<!-- ============ CONTENIDO ============ -->
+<main class="page" id="page">
+
+  <!-- HERO -->
+  <header class="hero" id="hero">
+    <div class="hero-content reveal">
+      <p class="kicker">¡Nos casamos!</p>
+      <h1 class="hero-names">Maria<span class="hero-and">&amp;</span>Michael</h1>
+      <div class="hero-date-row">
+        <span class="line" aria-hidden="true"></span>
+        <p class="hero-date">26 . 09 . 2026</p>
+        <span class="line" aria-hidden="true"></span>
+      </div>
+      <p class="hero-place">Lima &middot; Perú</p>
+    </div>
+    <div class="scroll-hint" aria-hidden="true"><span></span></div>
+  </header>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Maria &amp; Michael — 26 · 09 · 2026 — Lima, Perú —&nbsp;</span>
+      <span>Maria &amp; Michael — 26 · 09 · 2026 — Lima, Perú —&nbsp;</span>
+      <span>Maria &amp; Michael — 26 · 09 · 2026 — Lima, Perú —&nbsp;</span>
+      <span>Maria &amp; Michael — 26 · 09 · 2026 — Lima, Perú —&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- FRASE -->
+  <section class="quote-section">
+    <div class="container reveal">
+      <p class="quote">&ldquo;Y de pronto, todos los caminos<br>tenían sentido: llevaban a ti.&rdquo;</p>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="gallery" id="nosotros">
+    <div class="gallery-head reveal">
+      <p class="section-kicker">Nosotros</p>
+    </div>
+    <div class="gallery-grid">
+      <figure class="g-item g-1 reveal"><img src="fotos/foto-1.jpg" alt="Maria y Michael" loading="lazy"></figure>
+      <figure class="g-item g-2 reveal"><img src="fotos/foto-2.jpg" alt="Maria y Michael" loading="lazy"></figure>
+      <figure class="g-item g-3 reveal"><img src="fotos/foto-3.jpg" alt="Maria y Michael" loading="lazy"></figure>
+      <figure class="g-item g-4 reveal"><img src="fotos/foto-4.jpg" alt="Maria y Michael" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section class="countdown-section">
+    <div class="container reveal">
+      <p class="section-kicker">Falta muy poco</p>
+      <div class="countdown" id="countdown" role="timer" aria-label="Cuenta regresiva para la boda">
+        <div class="cd-unit"><span class="cd-num" id="cdDays">--</span><span class="cd-label">días</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><span class="cd-num" id="cdHours">--</span><span class="cd-label">horas</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><span class="cd-num" id="cdMins">--</span><span class="cd-label">min</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><span class="cd-num" id="cdSecs">--</span><span class="cd-label">seg</span></div>
+      </div>
+      <a class="btn btn-ghost" id="calendarBtn" target="_blank" rel="noopener"
+         href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda%20de%20Maria%20%26%20Michael&dates=20260926T210000Z/20260927T070000Z&details=Ceremonia%204%3A00pm%20Parroquia%20San%20Jos%C3%A9%20%C2%B7%20Recepci%C3%B3n%207%3A00pm%20Club%20de%20Leones%20de%20Miraflores&location=Parroquia%20San%20Jos%C3%A9%2C%20Av.%20Rep%C3%BAblica%20Dominicana%20458%2C%20Jes%C3%BAs%20Mar%C3%ADa%2C%20Lima">
+        Agendar en mi calendario
+      </a>
+    </div>
+  </section>
+
+  <!-- LUGARES -->
+  <section class="venues" id="lugares">
+    <div class="container">
+      <p class="section-kicker reveal">El gran día</p>
+      <h2 class="section-title reveal">Sábado 26 de septiembre</h2>
+
+      <!-- CEREMONIA -->
+      <article class="venue paper-card tilt-l reveal">
+        <div class="venue-art">
+          <img src="fotos/parroquia.jpg" alt="Ilustración de la Parroquia San José" width="692" height="717">
+        </div>
+        <div class="venue-info">
+          <p class="venue-kicker">Ceremonia religiosa</p>
+          <h3 class="venue-name">Parroquia San José</h3>
+          <p class="venue-time"><span class="time-big">4:00</span> pm</p>
+          <p class="venue-address">Av. República Dominicana 458<br>Jesús María, Lima</p>
+          <a class="btn btn-pill" href="https://maps.app.goo.gl/8JaZDFfFkBPBRWYw5" target="_blank" rel="noopener">Ubicación</a>
+        </div>
+      </article>
+
+      <!-- sello decorativo entre tarjetas -->
+      <div class="deco-seal" aria-hidden="true">
+        <svg viewBox="0 0 100 128">
+          <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <ellipse cx="50" cy="64" rx="36" ry="50" stroke="#cfc4ad" stroke-width="1.6"/>
+            <ellipse cx="50" cy="64" rx="31" ry="45" stroke="#d8cebb" stroke-width="1" stroke-dasharray="0.5 6"/>
+            <path d="M50 42 C38 46 36 62 44 70 C48 74 56 74 59 68 C64 58 60 45 50 42 Z" stroke="#b9ad93" stroke-width="1.8"/>
+            <path d="M50 42 C54 48 55 58 52 66" stroke="#c4b99f" stroke-width="1.3"/>
+            <path d="M49 64 V52" stroke="#b9ad93" stroke-width="1.8"/>
+            <path d="M51 72 C51 80 49 86 46 92" stroke="#b9ad93" stroke-width="1.8"/>
+            <path d="M46 92 C38 86 34 80 36 74 C42 76 46 82 47 88" stroke="#c4b99f" stroke-width="1.5"/>
+            <path d="M46 92 C52 85 58 82 63 83 C61 89 55 93 49 93" stroke="#c4b99f" stroke-width="1.5"/>
+          </g>
+        </svg>
+      </div>
+
+      <!-- RECEPCIÓN -->
+      <article class="venue venue-flip paper-card tilt-r reveal">
+        <div class="venue-art">
+          <img src="fotos/club-de-leones.jpg" alt="Ilustración del Club de Leones de Miraflores" width="864" height="452">
+        </div>
+        <div class="venue-info">
+          <p class="venue-kicker">Recepción</p>
+          <h3 class="venue-name">Club de Leones de Miraflores</h3>
+          <p class="venue-time"><span class="time-big">7:00</span> pm</p>
+          <p class="venue-address">Av. Arequipa 4701<br>Miraflores, Lima</p>
+          <a class="btn btn-pill" href="https://maps.app.goo.gl/eLtRuQRfguK5GjGd6" target="_blank" rel="noopener">Ubicación</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- DRESS CODE -->
+  <section class="dresscode">
+    <div class="container">
+      <div class="paper-card card-narrow tilt-l reveal">
+        <img class="couple-art" src="fotos/novios.png" alt="" width="669" height="1152" aria-hidden="true">
+        <p class="section-kicker">Vestimenta</p>
+        <h2 class="section-title">Formal</h2>
+        <p class="dress-note">Agradecemos evitar los colores blanco, marfil y sus derivados, ya que estarán reservados para la novia.<br>Puedes inspirarte en esta paleta:</p>
+        <div class="swatches">
+          <span class="swatch" style="--c:#afb892"></span>
+          <span class="swatch" style="--c:#9d6472"></span>
+          <span class="swatch" style="--c:#5a1f28"></span>
+          <span class="swatch" style="--c:#23304f"></span>
+          <span class="swatch" style="--c:#1a1a1a"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGALOS -->
+  <section class="gifts" id="regalos">
+    <div class="container">
+      <div class="card-arch-wrap reveal">
+        <img class="arch-cala" src="assets/cala.png" alt="" aria-hidden="true">
+        <div class="paper-card card-arch">
+          <p class="section-kicker">Regalos</p>
+          <h2 class="section-title">Nuestros futuros proyectos</h2>
+          <p class="gifts-text">
+            Estamos muy emocionados de comenzar esta nueva etapa de nuestras vidas juntos.
+            Si desean hacernos un regalo, agradeceremos mucho una contribución para nuestros
+            futuros proyectos.
+          </p>
+        </div>
+      </div>
+
+      <div class="gift-cards reveal">
+        <article class="gift-card">
+          <p class="gift-bank">BCP &middot; Cuenta en Soles</p>
+          <p class="gift-holder">Michael David Delgado</p>
+          <div class="gift-row">
+            <span class="gift-label">N.º de cuenta</span>
+            <span class="gift-value">19329192165034<button class="copy-btn" data-copy="19329192165034" aria-label="Copiar número de cuenta">Copiar</button></span>
+          </div>
+          <div class="gift-row">
+            <span class="gift-label">CCI</span>
+            <span class="gift-value">00219312919216503411<button class="copy-btn" data-copy="00219312919216503411" aria-label="Copiar CCI">Copiar</button></span>
+          </div>
+          <div class="gift-row">
+            <span class="gift-label">Yape &middot; Plin</span>
+            <span class="gift-value">999 889 033<button class="copy-btn" data-copy="999889033" aria-label="Copiar número de Yape">Copiar</button></span>
+          </div>
+        </article>
+
+        <article class="gift-card">
+          <p class="gift-bank">BBVA &middot; Cuenta en Dólares</p>
+          <p class="gift-holder">Maria Carolina Guevara</p>
+          <div class="gift-row">
+            <span class="gift-label">N.º de cuenta</span>
+            <span class="gift-value">0011-0142-0201102386<button class="copy-btn" data-copy="001101420201102386" aria-label="Copiar número de cuenta">Copiar</button></span>
+          </div>
+          <div class="gift-row">
+            <span class="gift-label">CCI</span>
+            <span class="gift-value">01114200020110238674<button class="copy-btn" data-copy="01114200020110238674" aria-label="Copiar CCI">Copiar</button></span>
+          </div>
+          <div class="gift-row">
+            <span class="gift-label">Código SWIFT</span>
+            <span class="gift-value">BCONPEPL<button class="copy-btn" data-copy="BCONPEPL" aria-label="Copiar código SWIFT">Copiar</button></span>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="rsvp" id="rsvp">
+    <div class="container reveal">
+      <div class="lace-wrap">
+        <img class="lace" src="assets/lace.svg" alt="" aria-hidden="true">
+        <div class="paper-card rsvp-card">
+          <svg class="quill-art" viewBox="0 0 120 90" aria-hidden="true">
+            <g fill="none" stroke="var(--brown)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M78 10 C64 18 52 34 46 54 C54 52 66 44 74 32 C80 24 82 16 78 10 Z" fill="var(--brown)" stroke="none"/>
+              <path d="M46 54 C44 60 42 66 41 71"/>
+              <path d="M78 10 C70 26 56 44 46 54" stroke="#f8f4ec" stroke-width="1.1"/>
+              <path d="M30 78 C44 70 62 74 74 78 C64 84 48 86 38 82" stroke-width="1.4"/>
+            </g>
+          </svg>
+          <p class="section-kicker">Confirmación de asistencia</p>
+          <h2 class="section-title">¿Nos acompañas?</h2>
+          <p class="rsvp-deadline">Por favor confírmanos antes del <strong>31 de agosto de 2026</strong></p>
+
+          <form class="rsvp-form" id="rsvpForm" novalidate>
+        <div class="field">
+          <label for="fName">Tu nombre completo *</label>
+          <input type="text" id="fName" name="nombre" required autocomplete="name" placeholder="Nombre y apellidos">
+        </div>
+
+        <div class="field">
+          <span class="field-label">¿Asistirás? *</span>
+          <div class="radio-row">
+            <label class="radio-pill"><input type="radio" name="asistencia" value="Sí, asistiré" required><span>¡Sí, ahí estaré!</span></label>
+            <label class="radio-pill"><input type="radio" name="asistencia" value="No podré asistir"><span>No podré asistir</span></label>
+          </div>
+        </div>
+
+        <div class="field" id="companionField">
+          <label for="fCompanion">Tu acompañante</label>
+          <p class="field-help">Si los novios te confirmaron una invitación con acompañante, detalla aquí su nombre completo.</p>
+          <input type="text" id="fCompanion" name="acompanante" placeholder="Nombre completo de tu acompañante">
+        </div>
+
+        <div class="field" id="allergyField">
+          <label for="fAllergy">¿Tienes alguna alergia alimentaria?</label>
+          <textarea id="fAllergy" name="alergias" rows="2" placeholder="Por favor detállalo aquí"></textarea>
+        </div>
+
+        <div class="field" id="songField">
+          <label for="fSong">¿Qué canción no puede faltar en la pista de baile? 🎶</label>
+          <input type="text" id="fSong" name="cancion" placeholder="Canción y artista, para celebrar juntos">
+        </div>
+
+        <button type="submit" class="btn btn-solid" id="rsvpSubmit">Enviar confirmación</button>
+        <p class="rsvp-hint" id="rsvpHint">Al enviar se abrirá WhatsApp con tu confirmación lista para mandarnos.</p>
+            <p class="rsvp-success" id="rsvpSuccess" hidden>¡Gracias! Recibimos tu confirmación. 💚</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container reveal">
+      <p class="footer-thanks">Tu presencia es nuestro mejor regalo</p>
+      <figure class="footer-polaroid">
+        <img src="fotos/foto-1.jpg" alt="Maria y Michael" loading="lazy">
+        <figcaption>¡Te esperamos!</figcaption>
+      </figure>
+      <p class="footer-names">Maria <span class="amp">&amp;</span> Michael</p>
+      <p class="footer-date">26 . 09 . 2026 &middot; Lima, Perú</p>
+    </div>
+  </footer>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

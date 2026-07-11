@@ -1,0 +1,297 @@
+/* ============================================================
+   Sobre de apertura + música — Maria & Michael
+   Papel marfil con relieve floral, monograma MM, sello de cala
+   ============================================================ */
+
+:root {
+  --paper: #f4efe6;
+  --paper-deep: #ebe4d4;
+  --paper-edge: #e0d8c6;
+  --ink-brown: #4a3a2d;
+  --ease-open: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* patrón floral en relieve (trazo sombra arriba + luz abajo) */
+  --floral: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280' viewBox='0 0 280 280'%3E%3Cg fill='none' stroke-width='1.4'%3E%3Cg stroke='%23e3dbc8' transform='translate(0,-1)'%3E%3Cpath d='M10 70 Q70 10 140 55 Q100 90 40 95 Q15 88 10 70 Z'/%3E%3Cpath d='M25 78 Q80 40 130 58'/%3E%3Cpath d='M150 200 Q190 130 260 150 Q250 210 190 230 Q160 222 150 200 Z'/%3E%3Cpath d='M162 205 Q200 155 248 158'/%3E%3Cpath d='M60 175 Q40 225 88 264'/%3E%3Cpath d='M204 18 Q232 58 272 54 Q266 94 222 94 Q202 68 204 18 Z'/%3E%3Cpath d='M98 128 Q120 108 146 117 Q136 140 108 142 Q100 136 98 128 Z'/%3E%3C/g%3E%3Cg stroke='%23fffef7' transform='translate(0,1)'%3E%3Cpath d='M10 70 Q70 10 140 55 Q100 90 40 95 Q15 88 10 70 Z'/%3E%3Cpath d='M25 78 Q80 40 130 58'/%3E%3Cpath d='M150 200 Q190 130 260 150 Q250 210 190 230 Q160 222 150 200 Z'/%3E%3Cpath d='M162 205 Q200 155 248 158'/%3E%3Cpath d='M60 175 Q40 225 88 264'/%3E%3Cpath d='M204 18 Q232 58 272 54 Q266 94 222 94 Q202 68 204 18 Z'/%3E%3Cpath d='M98 128 Q120 108 146 117 Q136 140 108 142 Q100 136 98 128 Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* ---------- overlay ---------- */
+
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  background:
+    var(--floral),
+    radial-gradient(120% 90% at 50% 0%, var(--white) 0%, var(--cream) 55%, var(--cream-deep) 100%);
+  background-blend-mode: soft-light, normal;
+  transition: opacity 1100ms ease;
+}
+
+.intro.is-done {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.intro-inner { text-align: center; padding: 2rem; }
+
+.intro-kicker {
+  font-size: 0.72rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--taupe);
+  margin-bottom: 2.6rem;
+  transition: opacity 700ms ease;
+}
+
+.intro-tap {
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--olive);
+  margin-top: 2.6rem;
+  animation: tap-fade 2.8s ease-in-out infinite;
+  transition: opacity 600ms ease;
+}
+
+@keyframes tap-fade {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 1; }
+}
+
+.intro.is-open .intro-kicker,
+.intro.is-open .intro-tap { opacity: 0; }
+
+/* ---------- sobre ---------- */
+
+.envelope-scene { perspective: 1600px; }
+
+.envelope {
+  position: relative;
+  width: min(460px, 88vw);
+  aspect-ratio: 10 / 6.6;
+  margin-inline: auto;
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 34px 44px rgba(59, 50, 42, 0.3));
+  transition: transform 1800ms var(--ease-open) 1400ms;
+  will-change: transform;
+}
+
+.intro.is-open .envelope { transform: translateY(22vh); }
+
+/* interior del sobre */
+.env-back {
+  position: absolute;
+  inset: 0;
+  background:
+    var(--floral),
+    linear-gradient(180deg, var(--paper-deep) 0%, var(--paper-edge) 100%);
+  border-radius: 8px;
+  z-index: 1;
+}
+
+/* carta */
+.env-letter {
+  position: absolute;
+  inset: 4% 5%;
+  z-index: 2;
+  transform: translateY(5%) scale(0.985);
+  transition: transform 1800ms var(--ease-open) 850ms;
+  will-change: transform;
+}
+
+.intro.is-open .env-letter { transform: translateY(-94%) scale(1); }
+
+.letter-card {
+  display: grid;
+  place-content: center;
+  gap: 0.8rem;
+  height: 100%;
+  text-align: center;
+  background: #fffdf8;
+  border: 1px solid var(--paper-edge);
+  border-radius: 5px;
+  box-shadow: 0 -14px 34px -20px rgba(59, 50, 42, 0.5);
+}
+
+.letter-monogram,
+.flap-monogram {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  color: var(--ink-brown);
+  line-height: 1;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.55);
+}
+
+.letter-monogram em,
+.flap-monogram em {
+  font-style: normal;
+  display: inline-block;
+  font-size: 0.78em;
+  margin-left: -0.18em;
+  transform: translateY(0.22em);
+  opacity: 0.95;
+}
+
+.letter-monogram { font-size: 1.7rem; }
+
+.letter-names {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  color: var(--brown);
+}
+
+.letter-date {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.4em;
+  color: var(--taupe);
+}
+
+/* bolsillo frontal */
+.env-pocket {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background:
+    var(--floral),
+    linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
+  clip-path: polygon(0 2%, 50% 54%, 100% 2%, 100% 100%, 0 100%);
+  border-radius: 8px;
+  box-shadow: inset 0 -3px 6px rgba(59, 50, 42, 0.06);
+  pointer-events: none;
+}
+
+/* solapa */
+.env-flap {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 56%;
+  z-index: 4;
+  background:
+    var(--floral),
+    linear-gradient(180deg, #f7f2e9 0%, var(--paper) 60%, var(--paper-deep) 100%);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  border-radius: 8px 8px 0 0;
+  transform-origin: top center;
+  backface-visibility: hidden;
+  transition: transform 1400ms var(--ease-open) 250ms, z-index 0s linear 950ms;
+  will-change: transform;
+  display: grid;
+  justify-items: center;
+}
+
+.intro.is-open .env-flap {
+  transform: rotateX(178deg);
+  z-index: 1;
+}
+
+/* monograma MM entrelazado sobre la solapa */
+.flap-monogram {
+  margin-top: 4%;
+  font-size: clamp(2.6rem, 10vw, 3.8rem);
+  letter-spacing: -0.02em;
+}
+
+/* sello de cera con cala */
+.env-seal {
+  position: absolute;
+  left: 50%;
+  top: 56%;
+  z-index: 5;
+  width: clamp(64px, 15vw, 78px);
+  aspect-ratio: 100 / 128;
+  transform: translate(-50%, -50%);
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background: radial-gradient(ellipse at 38% 28%, #f6efe0 0%, #e8ddc7 55%, #d9cdb3 100%);
+  box-shadow:
+    0 12px 26px -10px rgba(59, 50, 42, 0.5),
+    inset 0 2px 3px rgba(255, 255, 255, 0.85),
+    inset 0 -4px 8px rgba(120, 105, 80, 0.3);
+  animation: seal-pulse 3.2s ease-in-out infinite;
+  transition: transform 700ms var(--ease-open), opacity 600ms ease;
+  will-change: transform, opacity;
+}
+
+.env-seal svg { width: 100%; height: 100%; display: block; }
+
+.env-seal:hover, .env-seal:focus-visible {
+  transform: translate(-50%, -50%) scale(1.06) rotate(-3deg);
+  animation-play-state: paused;
+}
+
+.intro.is-open .env-seal {
+  transform: translate(-50%, -50%) scale(0.55) rotate(10deg);
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes seal-pulse {
+  0%, 100% { box-shadow: 0 12px 26px -10px rgba(59,50,42,.5), inset 0 2px 3px rgba(255,255,255,.85), inset 0 -4px 8px rgba(120,105,80,.3), 0 0 0 0 rgba(201,194,185,.55); }
+  50%      { box-shadow: 0 12px 26px -10px rgba(59,50,42,.5), inset 0 2px 3px rgba(255,255,255,.85), inset 0 -4px 8px rgba(120,105,80,.3), 0 0 0 18px rgba(201,194,185,0); }
+}
+
+/* ---------- botón de música ---------- */
+
+.music-toggle {
+  position: fixed;
+  right: 1.2rem;
+  bottom: 1.2rem;
+  z-index: 40;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--sage);
+  background: rgba(247, 243, 236, 0.88);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  box-shadow: 0 10px 24px -12px rgba(59, 50, 42, 0.5);
+  transition: transform 300ms var(--ease-open), background 300ms ease;
+}
+
+.music-toggle:hover { transform: scale(1.08); }
+
+.eq {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 16px;
+}
+
+.eq i {
+  width: 3px;
+  border-radius: 2px;
+  background: var(--olive);
+  animation: eq-bounce 1s ease-in-out infinite;
+}
+
+.eq i:nth-child(1) { height: 60%; animation-delay: 0s; }
+.eq i:nth-child(2) { height: 100%; animation-delay: 0.18s; }
+.eq i:nth-child(3) { height: 75%; animation-delay: 0.36s; }
+
+@keyframes eq-bounce {
+  0%, 100% { transform: scaleY(0.5); }
+  50% { transform: scaleY(1); }
+}
+
+.music-toggle.is-paused .eq i {
+  animation-play-state: paused;
+  transform: scaleY(0.35);
+  opacity: 0.55;
+}
+
+/* ---------- reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .env-seal, .intro-tap { animation: none; }
+  .eq i { animation: none; }
+  .intro { transition: opacity 400ms ease; }
+  .env-flap, .env-letter, .envelope, .env-seal { transition-duration: 1ms; transition-delay: 0ms; }
+}
