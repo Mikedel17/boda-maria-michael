@@ -13,8 +13,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="envelope.css">
+<link rel="stylesheet" href="styles.css?v=6">
+<link rel="stylesheet" href="envelope.css?v=6">
 </head>
 <body>
 
@@ -24,49 +24,36 @@
   <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
 </button>
 
-<!-- ============ INTRO / SOBRE ============ -->
+<!-- ============ INTRO / SOBRE A PANTALLA COMPLETA ============ -->
 <div class="intro" id="intro" aria-hidden="false">
-  <div class="intro-inner">
-    <p class="intro-kicker">Tienes una invitación</p>
-
-    <div class="envelope-scene">
-      <div class="envelope" id="envelope">
-        <div class="env-back" aria-hidden="true"></div>
-        <div class="env-letter" aria-hidden="true">
-          <div class="letter-card">
-            <span class="letter-monogram">M<i class="mono-sep"></i>M</span>
-            <span class="letter-names">Maria <span class="amp">&amp;</span> Michael</span>
-            <span class="letter-date">26 . 09 . 2026</span>
-          </div>
-        </div>
-        <div class="env-flap" aria-hidden="true">
-          <span class="flap-monogram" aria-hidden="true">M<i class="mono-sep"></i>M</span>
-        </div>
-        <div class="env-pocket" aria-hidden="true"></div>
-        <button class="env-seal" id="openBtn" aria-label="Abrir invitación">
-          <svg viewBox="0 0 100 128" aria-hidden="true">
-            <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <!-- marco festoneado grabado -->
-              <ellipse cx="50" cy="64" rx="36" ry="50" stroke="#cfc4ad" stroke-width="1.6"/>
-              <ellipse cx="50" cy="64" rx="31" ry="45" stroke="#d8cebb" stroke-width="1" stroke-dasharray="0.5 6"/>
-              <!-- cala: espata -->
-              <path d="M50 42 C38 46 36 62 44 70 C48 74 56 74 59 68 C64 58 60 45 50 42 Z" stroke="#b9ad93" stroke-width="1.8"/>
-              <path d="M50 42 C54 48 55 58 52 66" stroke="#c4b99f" stroke-width="1.3"/>
-              <!-- espádice -->
-              <path d="M49 64 V52" stroke="#b9ad93" stroke-width="1.8"/>
-              <!-- tallo -->
-              <path d="M51 72 C51 80 49 86 46 92" stroke="#b9ad93" stroke-width="1.8"/>
-              <!-- hojas -->
-              <path d="M46 92 C38 86 34 80 36 74 C42 76 46 82 47 88" stroke="#c4b99f" stroke-width="1.5"/>
-              <path d="M46 92 C52 85 58 82 63 83 C61 89 55 93 49 93" stroke="#c4b99f" stroke-width="1.5"/>
-            </g>
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    <p class="intro-tap" id="introTap">Toca el sello para abrir</p>
+  <div class="env-liner" aria-hidden="true"></div>
+  <div class="env-flap" aria-hidden="true"></div>
+  <div class="env-body" aria-hidden="true">
+    <div class="fold-l"></div>
+    <div class="fold-r"></div>
   </div>
+  <div class="env-vignette" aria-hidden="true"></div>
+  <span class="env-monogram" aria-hidden="true">M<em>&amp;</em>M</span>
+  <button class="env-seal" id="openBtn" aria-label="Abrir invitación">
+    <svg viewBox="0 0 100 128" aria-hidden="true">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <!-- marco festoneado grabado -->
+        <ellipse cx="50" cy="64" rx="36" ry="50" stroke="#cfc4ad" stroke-width="1.6"/>
+        <ellipse cx="50" cy="64" rx="31" ry="45" stroke="#d8cebb" stroke-width="1" stroke-dasharray="0.5 6"/>
+        <!-- cala: espata -->
+        <path d="M50 42 C38 46 36 62 44 70 C48 74 56 74 59 68 C64 58 60 45 50 42 Z" stroke="#b9ad93" stroke-width="1.8"/>
+        <path d="M50 42 C54 48 55 58 52 66" stroke="#c4b99f" stroke-width="1.3"/>
+        <!-- espádice -->
+        <path d="M49 64 V52" stroke="#b9ad93" stroke-width="1.8"/>
+        <!-- tallo -->
+        <path d="M51 72 C51 80 49 86 46 92" stroke="#b9ad93" stroke-width="1.8"/>
+        <!-- hojas -->
+        <path d="M46 92 C38 86 34 80 36 74 C42 76 46 82 47 88" stroke="#c4b99f" stroke-width="1.5"/>
+        <path d="M46 92 C52 85 58 82 63 83 C61 89 55 93 49 93" stroke="#c4b99f" stroke-width="1.5"/>
+      </g>
+    </svg>
+  </button>
+  <p class="env-hint" id="introTap">Toca el sello para abrir</p>
 </div>
 
 <!-- ============ CONTENIDO ============ -->
@@ -77,6 +64,9 @@
     <div class="hero-content reveal">
       <p class="kicker">¡Nos casamos!</p>
       <h1 class="hero-names">Maria<span class="hero-and">&amp;</span>Michael</h1>
+      <div class="hero-arch">
+        <img src="fotos/foto-6.jpg" alt="Maria y Michael bailando en el centro de Lima" width="933" height="1400">
+      </div>
       <div class="hero-date-row">
         <span class="line" aria-hidden="true"></span>
         <p class="hero-date">26 . 09 . 2026</p>
@@ -176,7 +166,7 @@
       <!-- RECEPCIÓN -->
       <article class="venue venue-flip paper-card tilt-r reveal">
         <div class="venue-art">
-          <img src="fotos/club-de-leones.jpg" alt="Ilustración del Club de Leones de Miraflores" width="864" height="452">
+          <img src="fotos/club-de-leones.png" alt="Ilustración del Club de Leones de Miraflores" width="864" height="452">
         </div>
         <div class="venue-info">
           <p class="venue-kicker">Recepción</p>
@@ -273,7 +263,8 @@
   <section class="rsvp" id="rsvp">
     <div class="container reveal">
       <div class="lace-wrap">
-        <div class="paper-card rsvp-card lace-framed">
+        <div class="lace-doily" aria-hidden="true"></div>
+        <div class="paper-card rsvp-card">
           <svg class="quill-art" viewBox="0 0 120 90" aria-hidden="true">
             <g fill="none" stroke="var(--brown)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M78 10 C64 18 52 34 46 54 C54 52 66 44 74 32 C80 24 82 16 78 10 Z" fill="var(--brown)" stroke="none"/>
@@ -330,7 +321,7 @@
     <div class="container reveal">
       <p class="footer-thanks">Tu presencia es nuestro mejor regalo</p>
       <figure class="footer-polaroid">
-        <img src="fotos/foto-1.jpg" alt="Maria y Michael" loading="lazy">
+        <img src="fotos/foto-4.jpg" alt="Manos de Maria y Michael con el anillo de compromiso" loading="lazy" width="1400" height="933">
         <figcaption>¡Te esperamos!</figcaption>
       </figure>
       <p class="footer-names">Maria <span class="amp">&amp;</span> Michael</p>
@@ -340,6 +331,6 @@
 
 </main>
 
-<script src="app.js"></script>
+<script src="app.js?v=6"></script>
 </body>
 </html>

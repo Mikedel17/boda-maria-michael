@@ -202,19 +202,26 @@ body::after {
 
 .deco-seal svg { width: 100%; height: 100%; display: block; }
 
-/* tarjeta con marco de encaje (border-image adaptable a cualquier alto) */
+/* mantel de encaje: manto marfil calado que recubre toda la tarjeta */
 .lace-wrap {
+  position: relative;
   max-width: 600px;
   margin-inline: auto;
+  padding: clamp(26px, 6vw, 40px);
 }
 
-.lace-framed {
-  border: clamp(22px, 6vw, 32px) solid transparent;
+.lace-doily {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border: clamp(34px, 9vw, 48px) solid transparent;
   border-image: url("assets/lace-border.png") 40 round;
-  border-radius: 0;
-  background-clip: padding-box;
-  filter: drop-shadow(0 18px 30px rgba(59, 50, 42, 0.28));
+  background: #f4efe3 padding-box;
+  rotate: -1.2deg;
+  filter: drop-shadow(0 20px 34px rgba(59, 50, 42, 0.32));
 }
+
+.lace-wrap .paper-card { position: relative; z-index: 1; }
 
 /* ============================================================
    ORNAMENTOS (el intro/sobre vive en envelope.css)
@@ -246,7 +253,7 @@ body::after {
   font-family: var(--font-serif);
   font-weight: 300;
   font-style: italic;
-  font-size: clamp(3rem, 11vw, 6.2rem);
+  font-size: clamp(2.7rem, 9.5vw, 5.4rem);
   line-height: 1.05;
   color: var(--brown);
   display: grid;
@@ -258,6 +265,26 @@ body::after {
   font-style: normal;
   font-size: 0.42em;
   color: var(--olive);
+}
+
+/* foto en arco bajo los nombres */
+.hero-arch {
+  width: min(250px, 58vw);
+  margin: clamp(1.6rem, 4vw, 2.4rem) auto 0;
+  background: #fffdf8;
+  padding: 9px;
+  border-radius: 400px 400px 10px 10px;
+  box-shadow:
+    0 1px 2px rgba(59, 50, 42, 0.14),
+    0 26px 50px -24px rgba(59, 50, 42, 0.5);
+}
+
+.hero-arch img {
+  width: 100%;
+  aspect-ratio: 3 / 4.1;
+  object-fit: cover;
+  display: block;
+  border-radius: 400px 400px 5px 5px;
 }
 
 .hero-date-row {
@@ -481,9 +508,7 @@ section { padding: clamp(4.5rem, 10vw, 8rem) 0; }
   width: 100%;
   height: auto;
   display: block;
-  /* funde el blanco de la lámina con el fondo de la sección */
-  mix-blend-mode: multiply;
-  filter: sepia(0.22) opacity(0.88);
+  /* PNG transparente: los trazos toman el fondo de la tarjeta */
   transition: transform 900ms var(--ease-out);
 }
 
@@ -792,7 +817,7 @@ section { padding: clamp(4.5rem, 10vw, 8rem) 0; }
 .footer-ornament { margin-bottom: 1.8rem; }
 
 .footer-polaroid {
-  width: min(300px, 72vw);
+  width: min(360px, 82vw);
   margin: 0 auto 2.2rem;
   background: #fffdf8;
   padding: 12px 12px 4px;
@@ -805,7 +830,7 @@ section { padding: clamp(4.5rem, 10vw, 8rem) 0; }
 
 .footer-polaroid img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   display: block;
 }

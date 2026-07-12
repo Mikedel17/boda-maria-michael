@@ -1,0 +1,8 @@
+# originales pesados de cámara y archivos de trabajo (no se publican)
+fotos/*.JPEG
+fotos/Parroquia*.png
+fotos/Parroquia*.jpeg
+fotos/*(PNG).png
+fotos/parroquia 2.png
+fotos/Club de Leones.jpeg
+fotos/iloveimg-converted.zip

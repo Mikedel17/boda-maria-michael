@@ -21,6 +21,7 @@
 
   var intro = document.getElementById("intro");
   var openBtn = document.getElementById("openBtn");
+  var page = document.getElementById("page");
   var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   document.body.style.overflow = "hidden";
@@ -29,11 +30,12 @@
     intro.classList.add("is-open");
     startMusic();
 
-    // Fase 2: cuando la carta ya salió, retirar el overlay completo
-    var delay = reducedMotion ? 150 : 3200;
+    // Fase 2: solapa abierta -> la cámara "entra" a la invitación
+    var delay = reducedMotion ? 150 : 1900;
     setTimeout(function () {
       intro.classList.add("is-done");
       intro.setAttribute("aria-hidden", "true");
+      page.classList.add("is-in");
       document.body.style.overflow = "";
     }, delay);
   });
