@@ -24,36 +24,49 @@
   <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
 </button>
 
-<!-- ============ INTRO / SOBRE A PANTALLA COMPLETA ============ -->
+<!-- ============ INTRO / SOBRE ============ -->
 <div class="intro" id="intro" aria-hidden="false">
-  <div class="env-liner" aria-hidden="true"></div>
-  <div class="env-flap" aria-hidden="true"></div>
-  <div class="env-body" aria-hidden="true">
-    <div class="fold-l"></div>
-    <div class="fold-r"></div>
+  <div class="intro-inner">
+    <p class="intro-kicker">Tienes una invitación</p>
+
+    <div class="envelope-scene">
+      <div class="envelope" id="envelope">
+        <div class="env-back" aria-hidden="true"></div>
+        <div class="env-letter" aria-hidden="true">
+          <div class="letter-card">
+            <span class="letter-monogram">M<em class="mono-amp">&amp;</em>M</span>
+            <span class="letter-names">Maria <span class="amp">&amp;</span> Michael</span>
+            <span class="letter-date">26 . 09 . 2026</span>
+          </div>
+        </div>
+        <div class="env-flap" aria-hidden="true">
+          <span class="flap-monogram" aria-hidden="true">M<em class="mono-amp">&amp;</em>M</span>
+        </div>
+        <div class="env-pocket" aria-hidden="true"></div>
+        <button class="env-seal" id="openBtn" aria-label="Abrir invitación">
+          <svg viewBox="0 0 100 128" aria-hidden="true">
+            <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <!-- marco festoneado grabado -->
+              <ellipse cx="50" cy="64" rx="36" ry="50" stroke="#cfc4ad" stroke-width="1.6"/>
+              <ellipse cx="50" cy="64" rx="31" ry="45" stroke="#d8cebb" stroke-width="1" stroke-dasharray="0.5 6"/>
+              <!-- cala: espata -->
+              <path d="M50 42 C38 46 36 62 44 70 C48 74 56 74 59 68 C64 58 60 45 50 42 Z" stroke="#b9ad93" stroke-width="1.8"/>
+              <path d="M50 42 C54 48 55 58 52 66" stroke="#c4b99f" stroke-width="1.3"/>
+              <!-- espádice -->
+              <path d="M49 64 V52" stroke="#b9ad93" stroke-width="1.8"/>
+              <!-- tallo -->
+              <path d="M51 72 C51 80 49 86 46 92" stroke="#b9ad93" stroke-width="1.8"/>
+              <!-- hojas -->
+              <path d="M46 92 C38 86 34 80 36 74 C42 76 46 82 47 88" stroke="#c4b99f" stroke-width="1.5"/>
+              <path d="M46 92 C52 85 58 82 63 83 C61 89 55 93 49 93" stroke="#c4b99f" stroke-width="1.5"/>
+            </g>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <p class="intro-tap" id="introTap">Toca el sello para abrir</p>
   </div>
-  <div class="env-vignette" aria-hidden="true"></div>
-  <span class="env-monogram" aria-hidden="true">M<em>&amp;</em>M</span>
-  <button class="env-seal" id="openBtn" aria-label="Abrir invitación">
-    <svg viewBox="0 0 100 128" aria-hidden="true">
-      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <!-- marco festoneado grabado -->
-        <ellipse cx="50" cy="64" rx="36" ry="50" stroke="#cfc4ad" stroke-width="1.6"/>
-        <ellipse cx="50" cy="64" rx="31" ry="45" stroke="#d8cebb" stroke-width="1" stroke-dasharray="0.5 6"/>
-        <!-- cala: espata -->
-        <path d="M50 42 C38 46 36 62 44 70 C48 74 56 74 59 68 C64 58 60 45 50 42 Z" stroke="#b9ad93" stroke-width="1.8"/>
-        <path d="M50 42 C54 48 55 58 52 66" stroke="#c4b99f" stroke-width="1.3"/>
-        <!-- espádice -->
-        <path d="M49 64 V52" stroke="#b9ad93" stroke-width="1.8"/>
-        <!-- tallo -->
-        <path d="M51 72 C51 80 49 86 46 92" stroke="#b9ad93" stroke-width="1.8"/>
-        <!-- hojas -->
-        <path d="M46 92 C38 86 34 80 36 74 C42 76 46 82 47 88" stroke="#c4b99f" stroke-width="1.5"/>
-        <path d="M46 92 C52 85 58 82 63 83 C61 89 55 93 49 93" stroke="#c4b99f" stroke-width="1.5"/>
-      </g>
-    </svg>
-  </button>
-  <p class="env-hint" id="introTap">Toca el sello para abrir</p>
 </div>
 
 <!-- ============ CONTENIDO ============ -->
@@ -331,6 +344,6 @@
 
 </main>
 
-<script src="app.js?v=6"></script>
+<script src="app.js?v=7"></script>
 </body>
 </html>
