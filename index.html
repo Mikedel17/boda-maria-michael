@@ -13,8 +13,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=7">
-<link rel="stylesheet" href="envelope.css?v=7">
+<link rel="stylesheet" href="styles.css?v=15">
+<link rel="stylesheet" href="envelope.css?v=15">
 </head>
 <body>
 
@@ -77,9 +77,10 @@
     <div class="hero-content reveal">
       <p class="kicker">¡Nos casamos!</p>
       <h1 class="hero-names">Maria<span class="hero-and">&amp;</span>Michael</h1>
-      <div class="hero-arch">
-        <img src="fotos/foto-6.jpg" alt="Maria y Michael bailando en el centro de Lima" width="933" height="1400">
-      </div>
+      <figure class="hero-photo">
+        <img class="photo-main" src="fotos/foto-6.jpg" alt="Maria y Michael bailando en el centro de Lima" width="933" height="1400">
+        <img class="deco-flower cala-tl" src="assets/cala.png" alt="" aria-hidden="true">
+      </figure>
       <div class="hero-date-row">
         <span class="line" aria-hidden="true"></span>
         <p class="hero-date">26 . 09 . 2026</p>
@@ -87,7 +88,6 @@
       </div>
       <p class="hero-place">Lima &middot; Perú</p>
     </div>
-    <div class="scroll-hint" aria-hidden="true"><span></span></div>
   </header>
 
   <!-- MARQUEE -->
@@ -147,9 +147,9 @@
       <h2 class="section-title reveal">Sábado 26 de septiembre</h2>
 
       <!-- CEREMONIA -->
-      <article class="venue paper-card tilt-l reveal">
+      <article class="venue paper-card lace-card tilt-l reveal">
         <div class="venue-art">
-          <img src="fotos/parroquia.png" alt="Ilustración de la Parroquia San José" width="445" height="445">
+          <img src="fotos/parroquia.png" alt="Ilustración de la Parroquia San José" width="434" height="434">
         </div>
         <div class="venue-info">
           <p class="venue-kicker">Ceremonia religiosa</p>
@@ -177,7 +177,7 @@
       </div>
 
       <!-- RECEPCIÓN -->
-      <article class="venue venue-flip paper-card tilt-r reveal">
+      <article class="venue venue-flip paper-card lace-card tilt-r reveal">
         <div class="venue-art">
           <img src="fotos/club-de-leones.png" alt="Ilustración del Club de Leones de Miraflores" width="864" height="452">
         </div>
@@ -195,7 +195,7 @@
   <!-- DRESS CODE -->
   <section class="dresscode">
     <div class="container">
-      <div class="paper-card card-narrow tilt-l reveal">
+      <div class="paper-card card-narrow lace-card tilt-l reveal">
         <img class="couple-art" src="fotos/novios.png" alt="" width="669" height="1152" aria-hidden="true">
         <p class="section-kicker">Vestimenta</p>
         <h2 class="section-title">Formal</h2>
@@ -229,8 +229,8 @@
 
       <div class="gift-cards reveal">
         <article class="gift-card">
-          <p class="gift-bank">BCP &middot; Cuenta en Soles</p>
           <p class="gift-holder">Michael David Delgado</p>
+          <p class="gift-bank">BCP &middot; Cuenta en Soles</p>
           <div class="gift-row">
             <span class="gift-label">N.º de cuenta</span>
             <span class="gift-number">1932&nbsp;9192&nbsp;1650&nbsp;34</span>
@@ -249,8 +249,8 @@
         </article>
 
         <article class="gift-card">
-          <p class="gift-bank">BBVA &middot; Cuenta en Dólares</p>
           <p class="gift-holder">Maria Carolina Guevara</p>
+          <p class="gift-bank">BBVA &middot; Cuenta en Dólares</p>
           <div class="gift-row">
             <span class="gift-label">N.º de cuenta</span>
             <span class="gift-number">0011&nbsp;0142&nbsp;0201&nbsp;1023&nbsp;86</span>
@@ -334,8 +334,9 @@
     <div class="container reveal">
       <p class="footer-thanks">Tu presencia es nuestro mejor regalo</p>
       <figure class="footer-polaroid">
-        <img src="fotos/foto-4.jpg" alt="Manos de Maria y Michael con el anillo de compromiso" loading="lazy" width="1400" height="933">
+        <img class="photo-main" src="fotos/foto-4.jpg" alt="Manos de Maria y Michael con el anillo de compromiso" loading="lazy" width="1400" height="933">
         <figcaption>¡Te esperamos!</figcaption>
+        <img class="deco-flower ramo-bl" src="assets/ramo.png" alt="" aria-hidden="true">
       </figure>
       <p class="footer-names">Maria <span class="amp">&amp;</span> Michael</p>
       <p class="footer-date">26 . 09 . 2026 &middot; Lima, Perú</p>
@@ -344,6 +345,6 @@
 
 </main>
 
-<script src="app.js?v=7"></script>
+<script src="app.js?v=15"></script>
 </body>
 </html>

@@ -129,6 +129,18 @@ body::after {
     0 26px 50px -26px rgba(59, 50, 42, 0.5);
 }
 
+/* marco de encaje reutilizable (mismo mantel del RSVP) */
+.lace-card {
+  border: clamp(20px, 6vw, 40px) solid transparent;
+  border-image: url("assets/lace-frame.png") 70 round;
+  border-radius: 0;
+  background-clip: padding-box;
+  padding: clamp(1rem, 3vw, 1.8rem);
+  /* sombra que sigue la forma del encaje (no un rectángulo) */
+  box-shadow: none;
+  filter: drop-shadow(0 16px 26px rgba(59, 50, 42, 0.26));
+}
+
 /* rotate (propiedad) no choca con el transform del reveal */
 .tilt-l { rotate: -1.1deg; }
 .tilt-r { rotate: 0.9deg; }
@@ -214,11 +226,10 @@ body::after {
   position: absolute;
   inset: 0;
   z-index: 0;
-  border: clamp(34px, 9vw, 48px) solid transparent;
-  border-image: url("assets/lace-border.png") 40 round;
-  background: #f4efe3 padding-box;
-  rotate: -1.2deg;
-  filter: drop-shadow(0 20px 34px rgba(59, 50, 42, 0.32));
+  border: clamp(30px, 8vw, 46px) solid transparent;
+  border-image: url("assets/lace-frame.png") 70 round;
+  background: #f6f1e6 padding-box;
+  filter: drop-shadow(0 20px 34px rgba(59, 50, 42, 0.3));
 }
 
 .lace-wrap .paper-card { position: relative; z-index: 1; }
@@ -267,24 +278,53 @@ body::after {
   color: var(--olive);
 }
 
-/* foto en arco bajo los nombres */
-.hero-arch {
-  width: min(250px, 58vw);
-  margin: clamp(1.6rem, 4vw, 2.4rem) auto 0;
+/* foto polaroid bajo los nombres (estilo cámara instantánea) */
+.hero-photo {
+  width: min(290px, 72vw);
+  margin: clamp(1.8rem, 4.5vw, 2.8rem) auto 0;
   background: #fffdf8;
-  padding: 9px;
-  border-radius: 400px 400px 10px 10px;
+  padding: clamp(11px, 2.8vw, 15px);
+  padding-bottom: clamp(36px, 7vw, 48px);
+  border-radius: 2px;
+  rotate: -1.8deg;
   box-shadow:
     0 1px 2px rgba(59, 50, 42, 0.14),
-    0 26px 50px -24px rgba(59, 50, 42, 0.5);
+    0 24px 46px -22px rgba(59, 50, 42, 0.5);
 }
 
-.hero-arch img {
+.hero-photo { position: relative; }
+
+.hero-photo .photo-main {
   width: 100%;
-  aspect-ratio: 3 / 4.1;
+  height: auto;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
+  object-position: center 42%;
   display: block;
-  border-radius: 400px 400px 5px 5px;
+}
+
+/* acentos florales de la diseñadora */
+.deco-flower {
+  position: absolute;
+  height: auto;
+  pointer-events: none;
+  filter: drop-shadow(0 6px 10px rgba(59, 50, 42, 0.25));
+}
+
+.cala-tl {
+  width: clamp(48px, 14vw, 70px);
+  top: -18%;
+  left: -13%;
+  rotate: -14deg;
+  z-index: -1;
+}
+
+.ramo-bl {
+  width: clamp(96px, 28vw, 140px);
+  bottom: -7%;
+  left: -15%;
+  rotate: 4deg;
+  z-index: 2;
 }
 
 .hero-date-row {
@@ -389,6 +429,13 @@ section { padding: clamp(4.5rem, 10vw, 8rem) 0; }
 }
 
 .gallery-head { text-align: center; margin-bottom: clamp(2rem, 5vw, 3.5rem); }
+
+.gallery-head .section-kicker {
+  font-size: clamp(1.4rem, 4.5vw, 2rem);
+  letter-spacing: 0.3em;
+  color: var(--brown);
+  font-weight: 400;
+}
 
 .gallery-grid {
   width: min(980px, 92vw);
@@ -638,19 +685,19 @@ section { padding: clamp(4.5rem, 10vw, 8rem) 0; }
 
 .gift-card { text-align: center; }
 
-.gift-bank {
-  font-size: 0.7rem;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--olive);
-  margin-bottom: 0.4rem;
-}
-
 .gift-holder {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   color: var(--brown);
+  margin-bottom: 0.35rem;
+}
+
+.gift-bank {
+  font-size: 0.66rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--olive);
   margin-bottom: 1.4rem;
 }
 
@@ -817,7 +864,8 @@ section { padding: clamp(4.5rem, 10vw, 8rem) 0; }
 .footer-ornament { margin-bottom: 1.8rem; }
 
 .footer-polaroid {
-  width: min(360px, 82vw);
+  position: relative;
+  width: min(300px, 76vw);
   margin: 0 auto 2.2rem;
   background: #fffdf8;
   padding: 12px 12px 4px;
@@ -828,10 +876,12 @@ section { padding: clamp(4.5rem, 10vw, 8rem) 0; }
     0 26px 50px -24px rgba(59, 50, 42, 0.55);
 }
 
-.footer-polaroid img {
+.footer-polaroid .photo-main {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: auto;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
+  object-position: center;
   display: block;
 }
 
@@ -900,7 +950,6 @@ section { padding: clamp(4.5rem, 10vw, 8rem) 0; }
   .venue-info { text-align: center; }
   .venue-art { max-width: 320px; margin: 0 auto; }
   .only-desktop { display: none; }
-  .gift-row { grid-template-columns: 64px 1fr auto; }
 }
 
 @media (prefers-reduced-motion: reduce) {
