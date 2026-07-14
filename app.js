@@ -12,7 +12,7 @@
 
   // URL del Web App de Google Apps Script (ver apps-script.gs para instalarlo).
   // Con esta URL configurada, las confirmaciones se guardan en Google Sheets.
-  var APPS_SCRIPT_URL = "";
+  var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzlNQX-rL0uVJw-WLbIh6GnswK5VPnym7Hs1x9WHbfvacE1p82WRil4HxAmdGWXBRVQkQ/exec";
 
   // WhatsApp de respaldo para RSVP si Apps Script no está configurado o falla.
   var RSVP_WHATSAPP = "51999889033";

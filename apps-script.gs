@@ -1,28 +1,39 @@
 /**
  * RSVP — Boda Maria & Michael
- * Recibe las confirmaciones de la invitación web y las guarda en Google Sheets.
+ * Guarda las confirmaciones de la invitación web en el Google Sheet.
  *
- * INSTALACIÓN (5 minutos):
- * 1. Crea un Google Sheet nuevo llamado "RSVP Boda" con una hoja llamada "RSVP".
- * 2. En la fila 1 pon los encabezados:
- *    Fecha | Nombre | Asistencia | Acompañante | Alergias | Canción
- * 3. Extensiones → Apps Script → pega este archivo completo.
- * 4. Reemplaza SHEET_ID con el ID del Sheet (lo que va entre /d/ y /edit en la URL).
- * 5. Implementar → Nueva implementación → Aplicación web:
- *      - Ejecutar como: Yo
- *      - Acceso: Cualquier persona
- * 6. Copia la URL de la aplicación web y pégala en app.js → APPS_SCRIPT_URL.
+ * ACTUALIZAR (si ya lo tenías puesto):
+ * 1. Extensiones → Apps Script → reemplaza TODO por este archivo. Guarda 💾.
+ * 2. Implementar → Gestionar implementaciones → (lápiz ✏️ Editar)
+ *      → Versión: "Nueva versión" → Implementar.
+ *    Esto MANTIENE la misma URL /exec (no cambia).
+ *
+ * Para verificar: abre la URL /exec en el navegador. Debe decir algo como
+ * "RSVP boda activo · filas registradas: N". Ese N sube con cada confirmación.
  */
 
-var SHEET_ID = "PEGA_AQUI_EL_ID_DEL_SHEET";
+var SHEET_ID = "13KkIoCqXYGv6eGRSVYckFKJRdF2T0wd1eOZfzkq3KTY";
 var SHEET_NAME = "RSVP";
+var HEADERS = ["Fecha", "Nombre", "Asistencia", "Acompañante", "Alergias", "Canción"];
+
+function getSheet_() {
+  var ss = SpreadsheetApp.openById(SHEET_ID);
+  var sheet = ss.getSheetByName(SHEET_NAME);
+  if (!sheet) {
+    sheet = ss.insertSheet(SHEET_NAME);
+  }
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow(HEADERS);
+    sheet.getRange(1, 1, 1, HEADERS.length).setFontWeight("bold");
+    sheet.setFrozenRows(1);
+  }
+  return sheet;
+}
 
 function doPost(e) {
   try {
     var data = JSON.parse(e.postData.contents);
-    var sheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName(SHEET_NAME);
-
-    sheet.appendRow([
+    getSheet_().appendRow([
       new Date(),
       data.nombre || "",
       data.asistencia || "",
@@ -30,7 +41,6 @@ function doPost(e) {
       data.alergias || "",
       data.cancion || ""
     ]);
-
     return ContentService
       .createTextOutput(JSON.stringify({ ok: true }))
       .setMimeType(ContentService.MimeType.JSON);
@@ -39,4 +49,14 @@ function doPost(e) {
       .createTextOutput(JSON.stringify({ ok: false, error: String(err) }))
       .setMimeType(ContentService.MimeType.JSON);
   }
+}
+
+// Verificación por navegador: muestra cuántas confirmaciones hay registradas.
+function doGet() {
+  var n = 0;
+  try {
+    var sheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName(SHEET_NAME);
+    if (sheet) n = Math.max(0, sheet.getLastRow() - 1); // menos la fila de encabezados
+  } catch (err) {}
+  return ContentService.createTextOutput("RSVP boda activo · filas registradas: " + n);
 }
