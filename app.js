@@ -188,6 +188,19 @@
     done();
   }
 
+  /* ---------- REGALOS: revelar cuentas ---------- */
+
+  var giftsToggle = document.getElementById("giftsToggle");
+  var giftAccounts = document.getElementById("giftAccounts");
+
+  if (giftsToggle && giftAccounts) {
+    giftsToggle.addEventListener("click", function () {
+      var open = giftAccounts.classList.toggle("is-open");
+      giftsToggle.setAttribute("aria-expanded", String(open));
+      giftsToggle.textContent = open ? "Ocultar datos" : "Ver datos para regalo";
+    });
+  }
+
   /* ---------- RSVP ---------- */
 
   var form = document.getElementById("rsvpForm");

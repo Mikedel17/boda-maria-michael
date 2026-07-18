@@ -150,8 +150,9 @@
 .letter-date {
   font-family: var(--font-sans);
   font-size: 0.68rem;
-  letter-spacing: 0.4em;
+  letter-spacing: 0.32em;
   color: var(--taupe);
+  white-space: nowrap;
 }
 
 /* bolsillo frontal */
