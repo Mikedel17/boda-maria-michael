@@ -119,7 +119,7 @@
   var missing = 0;
 
   function hideBroken(img) {
-    img.closest(".g-item").style.display = "none";
+    img.closest(".ec-item").style.display = "none";
     missing += 1;
     if (missing === galleryImgs.length) gallery.classList.add("is-empty");
   }
